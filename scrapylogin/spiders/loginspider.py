@@ -1,16 +1,16 @@
 import scrapy
 class loginspider(scrapy.Spider):
     name = 'lgsm'
-    start_urls = ['http://www.newsmth.net/nForum/#!mainpage']
+    start_urls = ['http://www.newsmth.net/nForum/?_escaped_fragment_=mainpage']
     def parse(self, response):
         return scrapy.FormRequest.from_response(
                 response,
-                formdata={'id': 'batulu12', 'passwd' : 'hshy12'},
+                formdata={'u_login_id': 'batulu12', 'u_login_passwd' : 'hshy12'},
                 callback=self.after_login
                 )
 
     def after_login(self, response):
-        # check login succeed before going on
+        # check lo before going on
         #if "authentication failed" in response.body:
         #    self.log("Login failed", level =log.ERROR)
         #return
