@@ -5,7 +5,7 @@ class loginspider(scrapy.Spider):
     def parse(self, response):
         return scrapy.FormRequest.from_response(
                 response,
-                formdata={'u_login_id': 'batulu12', 'u_login_passwd' : 'hshy12'},
+                formdata={'u_login_id': '*******', 'u_login_passwd' : '*******'},
                 callback=self.after_login
                 )
 
